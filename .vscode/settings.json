@@ -1,0 +1,11 @@
+{
+  "editor.fontSize": 12,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "editor.tabSize": 2,
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/763141a6-0dba-46d3-825a-1faf954db5c6/resourceGroups/mirchili-db/providers/Microsoft.Web/sites/riderfrontend",
+  "appService.deploySubpath": "."
+}

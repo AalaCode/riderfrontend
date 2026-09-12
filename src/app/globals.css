@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/*
+ * Global design tokens for the ERP shell.
+ * Kept intentionally small — daisyui themes (corporate / business) supply
+ * the bulk of the color system, this just layers a couple of app-specific
+ * utility tweaks on top.
+ */
+:root {
+  --app-sidebar-width: 16rem;
+  --app-sidebar-width-collapsed: 4.5rem;
+  --green:#27ae60;
+  --black:#192a56;
+  --light-color:#666;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+html,
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:'Nunito', Arial, Helvetica, sans-serif;
+}
+
+/* Thin, subtle scrollbars for the sidebar / tables — keeps the dense ERP UI tidy */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: oklch(var(--bc) / 0.2);
+  border-radius: 999px;
+}
+
+/* Table row hover kept consistent across all DataTable instances */
+.app-table tbody tr {
+  transition: background-color 0.12s ease;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #666;
+    --foreground: #ededed;
+  }
+}
+ @theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+   --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+    --daisyui-themes: light, dark;
+  --daisyui-dark-theme: dark;
+   
+  
+  /* Configures daisyUI global behaviors */
+  --daisyui-base: true;
+  --daisyui-styled: true;
+  --daisyui-utils: true;
+  --daisyui-prefix: "";
+  --daisyui-logs: false;
+  --daisyui-theme-root: ":root";
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
