@@ -6,19 +6,12 @@ import withPWA from "@ducanh2912/next-pwa";
 
 
 const nextConfig: NextConfig = {
+   turbopack: {}, 
   // reactStrictMode: true,
   //   allowedDevOrigins: ['https://riderfrontend-4ijzxlpq7-aalacode.vercel.app/*'],
 
 };
-// const withPWA = withPWAInit({
-//   dest: "public",
-//   disable: process.env.NODE_ENV === "development",
-//   register: true,
-//   // ⬇️ skipWaiting ko yahan workboxOptions ke andar rakhein
-//   workboxOptions: {
-//     skipWaiting: true,
-//   },
-// });
+
 
 export default withPWA({
   dest: "public",
