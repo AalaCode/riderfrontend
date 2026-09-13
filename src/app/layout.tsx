@@ -2,6 +2,7 @@ import type { Metadata , Viewport } from "next";
 import { Providers } from "./providers";
 import "./globals.css";
 import { Nunito } from 'next/font/google'
+import PWARegister from "@/components/PWARegister"; 
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -15,10 +16,10 @@ export const metadata: Metadata = {
     // themeColor: "#27AE60",
   icons: {
     icon: [
-      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
-      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
   },
 };
@@ -41,7 +42,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="corporate">
       <body className={`${nunito.variable} font-sans min-h-screen bg-base-200 antialiased`}>
-        <Providers>{children}</Providers>
+          <PWARegister /> 
+        <Providers> {children}</Providers>
       </body>
     </html>
   );
