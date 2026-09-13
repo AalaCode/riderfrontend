@@ -3,12 +3,9 @@ import withPWAInit from "@ducanh2912/next-pwa";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-    allowedDevOrigins: ['192.168.1.*'],
+    allowedDevOrigins: ['https://riderfrontend-4ijzxlpq7-aalacode.vercel.app/*'],
 
 };
-
-
-
 const withPWA = withPWAInit({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
