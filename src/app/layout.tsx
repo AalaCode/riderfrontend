@@ -2,7 +2,6 @@ import type { Metadata , Viewport } from "next";
 import { Providers } from "./providers";
 import "./globals.css";
 import { Nunito } from 'next/font/google'
-import PWARegister from "@/components/PWARegister"; 
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -42,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="corporate">
       <body className={`${nunito.variable} font-sans min-h-screen bg-base-200 antialiased`}>
-          <PWARegister /> 
+         
         <Providers> {children}</Providers>
       </body>
     </html>
